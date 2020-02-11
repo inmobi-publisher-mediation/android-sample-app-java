@@ -23,17 +23,24 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // REQUIRED InMobi Mediation SDK dependencies
-    implementation 'com.inmobi.monetization:inmobi-ads:9.0.1'                   // [Required] Base module that handles InMobi ad rendering
-    implementation 'com.inmobi.monetization:inmobi-mediation:9.0.1'             // [Required] Mediation module that allows for mediation capabilities
-    implementation 'com.android.support:customtabs:28.0.0'                      // [Required] Allow redirection to URLs outside InMobi WebView
-    implementation 'com.squareup.picasso:picasso:2.71828'                       // [Required] Allow loading of interstitial assets (without this, all interstitial requests will fail)
-    implementation 'com.android.support:support-v4:28.0.0'                      // [Required] Allow support for paged scroll of a deck of images/ads
-    implementation 'com.android.support:recyclerview-v7:28.0.0'                 // [Required] Allow support for free scroll of a deck of images/ads
+    implementation 'com.inmobi.monetization:inmobi-ads:9.0.1'
+    // [Required] Base module that handles InMobi ad rendering
+    implementation 'com.inmobi.monetization:inmobi-mediation:9.0.1'
+    // [Required] Mediation module that allows for mediation capabilities
+    implementation 'androidx.browser:browser:1.0.0'
+    // [Required] Allow redirection to URLs outside InMobi WebView
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    // [Required] Allow loading of interstitial assets (without this, all interstitial requests will fail)
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // [Required] Allow support for paged scroll of a deck of images/ads
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    // [Required] Allow support for free scroll of a deck of images/ads
 
     // RECOMMENDED InMobi Mediation SDK dependencies
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0' // [Optional] Recommended dependencies for better targeting
-    implementation 'com.google.android.gms:play-services-location:17.0.0'       // [Optional] Recommended dependencies for better targeting
-
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+    // [Optional] Recommended dependencies for better targeting
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    // [Optional] Recommended dependencies for better targeting
 
 
 }

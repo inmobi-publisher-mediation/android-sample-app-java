@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BannerKeywordExample">
+
+    <TextView
+        android:id="@+id/bannerKWTextView"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:text="IMAB KW Banner Example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/setup_320x50_banner"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:onClick="setup320x50Banner"
+        android:text="Setup 320x50 Banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerKWTextView" />
+
+    <Button
+        android:id="@+id/setup_mrec_banner"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:onClick="setupMRECBanner"
+        android:text="Setup Mrec Banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setup_320x50_banner" />
+
+    <Button
+        android:id="@+id/inject_banner"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:onClick="injectBannerIntoView"
+        android:text="Inject Banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setup_mrec_banner" />
+
+    <Button
+        android:id="@+id/inject_banner2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:onClick="destroyMoPubBanner"
+        android:text="Remove Banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inject_banner" />
+
+    <LinearLayout
+        android:id="@+id/banner_kw_container"
+        android:layout_width="320dp"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
