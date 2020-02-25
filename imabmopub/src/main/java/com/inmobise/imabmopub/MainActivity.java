@@ -33,11 +33,21 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
+    private com.aerserv.sdk.SdkInitializationListener initASSdkListener() {
+        return new com.aerserv.sdk.SdkInitializationListener() {
+            @Override
+            public void onInitializationComplete(String s) {
+                // hello there
+            }
+        };
+    }
+
     public void initializeAdSDK() {
 
         SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder(Constants.MP_BannerAdUnitID).build();
         MoPub.initializeSdk(this, sdkConfiguration, initSdkListener());
-        InMobiAudienceBidder.initialize(this, Constants.IMAB_APPID);
+//        InMobiAudienceBidder.initialize(this, Constants.IMAB_APPID);
+        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID, initASSdkListener());
 
     }
 
