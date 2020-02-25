@@ -46,7 +46,6 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.inmobi.monetization/inmobi-AB-plugin-mopub
     implementation group: 'com.inmobi.monetization', name: 'inmobi-AB-plugin-mopub', version: '1.0.6'
-
     /*
     implementation 'com.inmobi.monetization:inmobi-ads:9.0.1'
     implementation 'com.inmobi.monetization:inmobi-mediation:9.0.1'
