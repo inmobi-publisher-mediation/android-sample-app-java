@@ -45,12 +45,11 @@ dependencies {
     /* InMobi SDK Dependencies */
 
     // https://mvnrepository.com/artifact/com.inmobi.monetization/inmobi-AB-plugin-mopub
-//    implementation group: 'com.inmobi.monetization', name: 'inmobi-AB-plugin-mopub', version: '1.0.6'
+//    implementation group: 'com.inmobi.monetization', name: 'inmobi-AB-plugin-mopub', version: '1.0.9'
     /*
     implementation 'com.inmobi.monetization:inmobi-ads:9.0.1'
     implementation 'com.inmobi.monetization:inmobi-mediation:9.0.1'
     */
-
 
 
     implementation 'androidx.browser:browser:1.0.0'
