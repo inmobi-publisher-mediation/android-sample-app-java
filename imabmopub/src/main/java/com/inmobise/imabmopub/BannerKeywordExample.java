@@ -39,14 +39,14 @@ public class BannerKeywordExample extends AppCompatActivity implements MoPubView
 
     public void setupMRECBanner(View view){
         bannerBidToken = null;
-        bannerBidToken = configureBannerBid(Constants.IMAB_BannerPLC, Constants.MP_MrecWidth, Constants.MP_MrecHeight);
+        bannerBidToken = configureBannerBid(Constants.IMAB_BannerPLC, Constants.MP_MrecWidth, Constants.MP_MrecHeight, Constants.MP_MRECAdUnitID);
         bannerBidToken.updateBid();
     }
 
 
     public void setup320x50Banner(View view){
         bannerBidToken = null;
-        bannerBidToken = configureBannerBid(Constants.IMAB_BannerPLC, Constants.MP_BannerWidth, Constants.MP_BannerHeight);
+        bannerBidToken = configureBannerBid(Constants.IMAB_BannerPLC, Constants.MP_BannerWidth, Constants.MP_BannerHeight, Constants.MP_BannerAdUnitID);
         bannerBidToken.updateBid();
     }
 
@@ -81,12 +81,12 @@ public class BannerKeywordExample extends AppCompatActivity implements MoPubView
 
 
     // Configure the banner and IMAB bid token
-    public IMAudienceBidder.BidToken configureBannerBid(String placement, int width, int height) {
+    public IMAudienceBidder.BidToken configureBannerBid(String placement, int width, int height, String mopubPlacement) {
 
         moPubView = new MoPubView(this);
         moPubView.setBannerAdListener(this);
         moPubView.setAutorefreshEnabled(false);
-        moPubView.setAdUnitId(Constants.MP_BannerAdUnitID);
+        moPubView.setAdUnitId(mopubPlacement);
 
         // NOTE: This MUST be set upon creation of the banner! Not doing so will cause keyword targeting to fail
         Map<String, Object> localExtras = new HashMap();

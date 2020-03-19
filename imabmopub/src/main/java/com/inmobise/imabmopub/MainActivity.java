@@ -1,5 +1,6 @@
 package com.inmobise.imabmopub;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -33,21 +34,21 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private com.aerserv.sdk.SdkInitializationListener initASSdkListener() {
-        return new com.aerserv.sdk.SdkInitializationListener() {
+
+    public com.inmobi.sdk.SdkInitializationListener initIMSDKListener() {
+        return new com.inmobi.sdk.SdkInitializationListener() {
             @Override
-            public void onInitializationComplete(String s) {
-                // hello there
+            public void onInitializationComplete(@Nullable Error error) {
+                // IM SDK initialized
             }
         };
     }
 
     public void initializeAdSDK() {
 
-        SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder(Constants.MP_BannerAdUnitID).build();
+        SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder(Constants.MP_APPID).build();
         MoPub.initializeSdk(this, sdkConfiguration, initSdkListener());
-//        InMobiAudienceBidder.initialize(this, Constants.IMAB_APPID);
-        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID, initASSdkListener());
+        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID, initIMSDKListener());
 
     }
 

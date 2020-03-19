@@ -14,7 +14,9 @@ public final class Constants {
     }
 
     final static String log = "IMAB-Example";
+    final static String MP_APPID = "6208244713bc4437a767f6aa8215bc29";
     final static String MP_BannerAdUnitID = "549952a8447d4911b8d690c21b66abac";
+    final static String MP_MRECAdUnitID = "2a7abfa82eb64ed78a30a6d6e2fe149c";
     final static String MP_InterstitialAdUnitID = "2beb37597378451f85ef0bfba0cd7908";
 
     final static int MP_BannerHeight = 50;
@@ -25,7 +27,7 @@ public final class Constants {
 
     final static String IMAB_APPID = "1017084";
     final static String IMAB_BannerPLC = "1055520";
-    final static String IMAB_MrecPLC = "1055520";
+    final static String IMAB_MrecPLC = "1070693";   // TODO: Implement and fix
     final static String IMAB_InterstitialPLC = "1064877";
     final static Long IMAB_InterstitialSuccessDelay= 5000L;
     final static Long IMAB_InterstitialFailureDelay = 10000L;
