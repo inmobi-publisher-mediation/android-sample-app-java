@@ -63,7 +63,8 @@
     <LinearLayout
         android:id="@+id/banner_kw_container"
         android:layout_width="320dp"
-        android:layout_height="250dp"
+        android:layout_height="50dp"
+        android:background="#F38F8F"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

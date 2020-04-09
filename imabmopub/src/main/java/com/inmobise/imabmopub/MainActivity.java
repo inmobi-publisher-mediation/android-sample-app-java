@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder(Constants.MP_APPID).build();
         MoPub.initializeSdk(this, sdkConfiguration, initSdkListener());
-        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID, initIMSDKListener());
+        InMobiAudienceBidder.initialize(this,Constants.MM_APPID, initIMSDKListener());
 
     }
 
