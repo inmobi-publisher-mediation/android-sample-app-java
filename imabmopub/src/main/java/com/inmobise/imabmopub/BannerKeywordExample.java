@@ -31,16 +31,13 @@ public class BannerKeywordExample extends AppCompatActivity implements MoPubView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner_keyword_example);
         ((TextView) findViewById(R.id.bannerKWTextView)).setText(Constants.IMAB_KW_Banner_Explanation);
-
-
-
     }
 
 
     public void setupMRECBanner(View view){
-        bannerBidToken = null;
-        bannerBidToken = configureBannerBid(Constants.IMAB_BannerPLC, Constants.MP_MrecWidth, Constants.MP_MrecHeight, Constants.MP_MRECAdUnitID);
-        bannerBidToken.updateBid();
+//        bannerBidToken = null;
+//        bannerBidToken = configureBannerBid(Constants.IMAB_BannerPLC, Constants.MP_MrecWidth, Constants.MP_MrecHeight, Constants.MP_MRECAdUnitID);
+//        bannerBidToken.updateBid();
     }
 
 
@@ -52,48 +49,40 @@ public class BannerKeywordExample extends AppCompatActivity implements MoPubView
 
 
     public void injectBannerIntoView(View view){
-
-        if(moPubView != null && moPubView.getParent() != null) {
-            ((ViewGroup)moPubView.getParent()).removeView(moPubView);
-        }
-
-        ((ViewGroup)findViewById(R.id.banner_kw_container)).addView(moPubView);
-
-        Toast.makeText(BannerKeywordExample.this, "injecting banner into view", Toast.LENGTH_SHORT).show();
-
-
     }
 
 
     public void destroyMoPubBanner(View view){
-
-        bannerLoaded = false;
-
-        if (moPubView != null) {
-            moPubView.destroy();
-            moPubView = null;
-
-            Toast.makeText(BannerKeywordExample.this, "destroy banner", Toast.LENGTH_SHORT).show();
-
-
-        }
+//
+//        bannerLoaded = false;
+//
+//        if (moPubView != null) {
+//            moPubView.destroy();
+//            moPubView = null;
+//
+//            Toast.makeText(BannerKeywordExample.this, "destroy banner", Toast.LENGTH_SHORT).show();
+//
+//
+//        }
     }
 
 
     // Configure the banner and IMAB bid token
-    public IMAudienceBidder.BidToken configureBannerBid(String placement, int width, int height, String mopubPlacement) {
+    public IMAudienceBidder.BidToken configureBannerBid(String placement, int width, int height, String mp_placement) {
 
-        moPubView = new MoPubView(this);
+        moPubView = (MoPubView) findViewById(R.id.mpView);
         moPubView.setBannerAdListener(this);
-        moPubView.setAutorefreshEnabled(false);
-        moPubView.setAdUnitId(mopubPlacement);
+        moPubView.setAutorefreshEnabled(true);
+        moPubView.setAdUnitId(mp_placement);
 
         // NOTE: This MUST be set upon creation of the banner! Not doing so will cause keyword targeting to fail
         Map<String, Object> localExtras = new HashMap();
-        localExtras.put(IMAudienceBidder.AD_KEY, Constants.IMAB_BannerPLC);
+        localExtras.put(IMAudienceBidder.AD_KEY, placement);
+
         moPubView.setLocalExtras(localExtras);
 
         inMobiAudienceBidder = IMAudienceBidder.getInstance();
+
 
         bannerBidToken = inMobiAudienceBidder.createBidToken(this, placement, width, height,
                 new IMAudienceBidder.IMAudienceBidderBannerKeywordListener() {
@@ -175,7 +164,7 @@ public class BannerKeywordExample extends AppCompatActivity implements MoPubView
 
     @Override
     protected void onDestroy() {
-        moPubView.destroy();
+//        moPubView.destroy();
         super.onDestroy();
     }
 

@@ -54,7 +54,10 @@ dependencies {
     /* InMobi SDK Dependencies */
 
     // https://mvnrepository.com/artifact/com.inmobi.monetization/inmobi-AB-plugin-mopub
-    implementation group: 'com.inmobi.monetization', name: 'inmobi-AB-plugin-mopub', version: '1.0.9'
+    implementation group: 'com.inmobi.monetization', name: 'inmobi-AB-plugin-mopub', version: '1.0.6' // -- works
+
+//    compile group: 'com.inmobi.monetization', name: 'inmobi-AB-plugin-mopub', version: '1.0.9'
+
     /*
     implementation 'com.inmobi.monetization:inmobi-ads:9.0.1'
     implementation 'com.inmobi.monetization:inmobi-mediation:9.0.1'
@@ -62,11 +65,12 @@ dependencies {
 
 
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'com.google.android.gms:play-services-location:17.0.0' //optional dependency for better targeting
+    implementation 'com.google.android.gms:play-services-location:17.0.0'//optional dependency for better targeting
     implementation 'com.android.support:customtabs:28.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
+
 
 
 }

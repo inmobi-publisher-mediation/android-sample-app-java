@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inmobi.ads.InMobiAudienceBidder;
 import com.inmobi.sdk.InMobiSdk;
@@ -35,20 +36,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public com.inmobi.sdk.SdkInitializationListener initIMSDKListener() {
-        return new com.inmobi.sdk.SdkInitializationListener() {
-            @Override
-            public void onInitializationComplete(@Nullable Error error) {
-                // IM SDK initialized
-            }
-        };
-    }
+//    public com.inmobi.sdk.SdkInitializationListener initIMSDKListener() {
+//        return new com.inmobi.sdk.SdkInitializationListener() {
+//            @Override
+//            public void onInitializationComplete(@Nullable Error error) {
+//                Toast.makeText(MainActivity.this,"InMobi initialized", Toast.LENGTH_LONG);
+//            }
+//        };
+//    }
 
     public void initializeAdSDK() {
 
         SdkConfiguration sdkConfiguration = new SdkConfiguration.Builder(Constants.MP_APPID).build();
         MoPub.initializeSdk(this, sdkConfiguration, initSdkListener());
-        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID, initIMSDKListener());
+        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID);
+
+//        InMobiAudienceBidder.initialize(this,Constants.IMAB_APPID, initIMSDKListener());
 
     }
 
